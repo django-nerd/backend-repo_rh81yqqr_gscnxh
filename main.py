@@ -1,8 +1,9 @@
 import os
-from fastapi import FastAPI
+from typing import List, Optional
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(title="Creator Console Portfolio API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,54 +15,159 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello from FastAPI Backend!"}
+    return {"message": "Creator Console Portfolio API running"}
 
-@app.get("/api/hello")
-def hello():
-    return {"message": "Hello from the backend API!"}
+# ---------- Core Data (static for this portfolio) ----------
+MAIN_MENU = [
+    {"key": "frontend", "label": "Frontend"},
+    {"key": "uiux", "label": "UI/UX Design"},
+    {"key": "reviews", "label": "Website Reviews"},
+    {"key": "about", "label": "About Me / Content"},
+]
+
+TECH_STACK = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript (Vanilla)",
+    "HTML / CSS",
+]
+
+PROJECTS = {
+    "React": [
+        {
+            "title": "Project Alpha",
+            "subtitle": "E‑commerce experience",
+            "demo": "https://example.com/react-alpha",
+            "code": "https://github.com/example/react-alpha"
+        },
+        {
+            "title": "Project Beta",
+            "subtitle": "Social app UI",
+            "demo": "https://example.com/react-beta",
+            "code": "https://github.com/example/react-beta"
+        }
+    ],
+    "Next.js": [
+        {
+            "title": "Next Storefront",
+            "subtitle": "Headless commerce",
+            "demo": "https://example.com/next-store",
+            "code": "https://github.com/example/next-store"
+        }
+    ],
+    "TypeScript": [
+        {
+            "title": "TS Components Kit",
+            "subtitle": "Accessible UI library",
+            "demo": "https://example.com/ts-kit",
+            "code": "https://github.com/example/ts-kit"
+        }
+    ],
+    "JavaScript (Vanilla)": [
+        {
+            "title": "Micro Interactions",
+            "subtitle": "Animation lab",
+            "demo": "https://example.com/js-micro",
+            "code": "https://github.com/example/js-micro"
+        }
+    ],
+    "HTML / CSS": [
+        {
+            "title": "Fluid Layouts",
+            "subtitle": "Modern responsive patterns",
+            "demo": "https://example.com/css-fluid",
+            "code": "https://github.com/example/css-fluid"
+        }
+    ],
+}
+
+DESIGN_FOCUS = [
+    "Modern UI / Interface",
+    "UX Case Studies",
+    "Web Design Inspiration",
+    "Digital Design",
+]
+
+GALLERY = {
+    "Modern UI / Interface": [
+        {"title": "Dashboard Nova", "image": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop"},
+        {"title": "Mobile Flow", "image": "https://images.unsplash.com/photo-1557825835-70d97c4aa78a?q=80&w=1200&auto=format&fit=crop"},
+        {"title": "Dark Glass UI", "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop"}
+    ],
+    "UX Case Studies": [
+        {"title": "Checkout Rethink", "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"}
+    ],
+    "Web Design Inspiration": [
+        {"title": "Motion Gallery", "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop"}
+    ],
+    "Digital Design": [
+        {"title": "Concept Posters", "image": "https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?q=80&w=1200&auto=format&fit=crop"}
+    ],
+}
+
+REVIEWS = [
+    {
+        "title": "2025 Trend — Minimal Motion Systems",
+        "type": "article",
+        "url": "https://example.com/review-trend",
+        "source": "Design Journal"
+    },
+    {
+        "title": "Landing Page UX — 5 Common Fixes",
+        "type": "video",
+        "url": "https://example.com/review-landing",
+        "source": "YouTube"
+    }
+]
+
+CONTACTS = [
+    {"label": "Dev Community", "url": "https://dev.to/"},
+    {"label": "Tech Creator Profile", "url": "https://www.youtube.com/"},
+    {"label": "Email Me", "url": "mailto:hello@example.com"},
+]
+
+# ---------- Endpoints ----------
+
+@app.get("/api/menu")
+def get_menu():
+    return {"items": MAIN_MENU}
+
+@app.get("/api/frontend/tech")
+def get_tech():
+    return {"items": TECH_STACK}
+
+@app.get("/api/projects")
+def get_projects(tech: str = Query(..., description="Choose a technology key from /api/frontend/tech")):
+    return {"tech": tech, "projects": PROJECTS.get(tech, [])}
+
+@app.get("/api/design/focus")
+def get_design_focus():
+    return {"items": DESIGN_FOCUS}
+
+@app.get("/api/design/gallery")
+def get_gallery(focus: str = Query(..., description="Choose a focus key from /api/design/focus")):
+    return {"focus": focus, "items": GALLERY.get(focus, [])}
+
+@app.get("/api/reviews")
+def get_reviews():
+    return {"items": REVIEWS}
+
+@app.get("/api/contact")
+def get_contact():
+    return {"items": CONTACTS}
 
 @app.get("/test")
 def test_database():
-    """Test endpoint to check if database is available and accessible"""
+    """Connectivity probe for platform; database not required for this portfolio."""
     response = {
         "backend": "✅ Running",
-        "database": "❌ Not Available",
+        "database": "ℹ️ Not used for this app",
         "database_url": None,
         "database_name": None,
-        "connection_status": "Not Connected",
+        "connection_status": "Not Required",
         "collections": []
     }
-    
-    try:
-        # Try to import database module
-        from database import db
-        
-        if db is not None:
-            response["database"] = "✅ Available"
-            response["database_url"] = "✅ Configured"
-            response["database_name"] = db.name if hasattr(db, 'name') else "✅ Connected"
-            response["connection_status"] = "Connected"
-            
-            # Try to list collections to verify connectivity
-            try:
-                collections = db.list_collection_names()
-                response["collections"] = collections[:10]  # Show first 10 collections
-                response["database"] = "✅ Connected & Working"
-            except Exception as e:
-                response["database"] = f"⚠️  Connected but Error: {str(e)[:50]}"
-        else:
-            response["database"] = "⚠️  Available but not initialized"
-            
-    except ImportError:
-        response["database"] = "❌ Database module not found (run enable-database first)"
-    except Exception as e:
-        response["database"] = f"❌ Error: {str(e)[:50]}"
-    
-    # Check environment variables
-    import os
-    response["database_url"] = "✅ Set" if os.getenv("DATABASE_URL") else "❌ Not Set"
-    response["database_name"] = "✅ Set" if os.getenv("DATABASE_NAME") else "❌ Not Set"
-    
     return response
 
 

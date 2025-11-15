@@ -1,0 +1,27 @@
+INFO:     Will watch for changes in these directories: ['/home/workspace']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [144] using StatReload
+INFO:     Started server process [146]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.20.0.1:57256 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:58504 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58514 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58526 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58534 - "GET /api/reviews HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58542 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58514 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58504 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58534 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58526 - "GET /api/reviews HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58542 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58548 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58548 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39738 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39750 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39762 - "GET /api/reviews HTTP/1.1" 200 OK
+INFO:     172.20.0.1:58548 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39764 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39738 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39750 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39762 - "GET /api/reviews HTTP/1.1" 200 OK
