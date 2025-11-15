@@ -1,28 +1,17 @@
 INFO:     Will watch for changes in these directories: ['/home/workspace']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [189] using StatReload
-INFO:     Started server process [191]
+INFO:     Started reloader process [259] using StatReload
+INFO:     Started server process [261]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     172.20.0.1:37678 - "HEAD / HTTP/1.1" 405 Method Not Allowed
-INFO:     172.20.0.1:37692 - "GET /api/menu HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37694 - "GET /api/design/focus HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37710 - "GET /api/contact HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37714 - "GET /api/reviews HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37716 - "GET /api/frontend/tech HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37692 - "GET /api/menu HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37694 - "GET /api/design/focus HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37710 - "GET /api/contact HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37716 - "GET /api/frontend/tech HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37714 - "GET /api/reviews HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37714 - "GET /api/menu HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37694 - "GET /api/frontend/tech HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37692 - "GET /api/contact HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37710 - "GET /api/reviews HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37716 - "GET /api/design/focus HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37692 - "GET /api/contact HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37694 - "GET /api/menu HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37714 - "GET /api/frontend/tech HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37710 - "GET /api/reviews HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37716 - "GET /api/design/focus HTTP/1.1" 200 OK
-INFO:     172.20.0.1:37722 - "GET /api/projects?tech=Next.js HTTP/1.1" 200 OK
+INFO:     172.20.0.1:55518 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:39108 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39116 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39126 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39132 - "GET /api/reviews HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39144 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39108 - "GET /api/menu HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39116 - "GET /api/frontend/tech HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39126 - "GET /api/design/focus HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39132 - "GET /api/contact HTTP/1.1" 200 OK
+INFO:     172.20.0.1:39144 - "GET /api/reviews HTTP/1.1" 200 OK

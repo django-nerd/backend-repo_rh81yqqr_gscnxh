@@ -19,65 +19,92 @@ def read_root():
 
 # ---------- Core Data (static for this portfolio) ----------
 MAIN_MENU = [
-    {"key": "frontend", "label": "Frontend"},
-    {"key": "uiux", "label": "UI/UX Design"},
+    {"key": "frontend", "label": "Projects"},
+    {"key": "uiux", "label": "Design Gallery"},
     {"key": "reviews", "label": "Website Reviews"},
-    {"key": "about", "label": "About Me / Content"},
+    {"key": "about", "label": "About / Contact"},
 ]
 
 TECH_STACK = [
     "React",
     "Next.js",
-    "TypeScript",
-    "JavaScript (Vanilla)",
-    "HTML / CSS",
+    "JavaScript",
+    "Node.js",
+    "GSAP",
+    "Spline",
+    "Sentry",
+    "Google Analytics",
 ]
 
 PROJECTS = {
     "React": [
         {
-            "title": "Project Alpha",
-            "subtitle": "E‑commerce experience",
-            "demo": "https://example.com/react-alpha",
-            "code": "https://github.com/example/react-alpha"
+            "title": "Console UI Kit",
+            "subtitle": "Framer Motion + Tailwind component system",
+            "demo": "https://example.com/react-console-kit",
+            "code": "https://github.com/example/react-console-kit"
         },
         {
-            "title": "Project Beta",
-            "subtitle": "Social app UI",
-            "demo": "https://example.com/react-beta",
-            "code": "https://github.com/example/react-beta"
+            "title": "Realtime Dash",
+            "subtitle": "Charts, sockets, theming",
+            "demo": "https://example.com/react-realtime",
+            "code": "https://github.com/example/react-realtime"
         }
     ],
     "Next.js": [
         {
-            "title": "Next Storefront",
-            "subtitle": "Headless commerce",
-            "demo": "https://example.com/next-store",
-            "code": "https://github.com/example/next-store"
+            "title": "Next Commerce",
+            "subtitle": "ISR, app router, Stripe",
+            "demo": "https://example.com/next-commerce",
+            "code": "https://github.com/example/next-commerce"
         }
     ],
-    "TypeScript": [
+    "JavaScript": [
         {
-            "title": "TS Components Kit",
-            "subtitle": "Accessible UI library",
-            "demo": "https://example.com/ts-kit",
-            "code": "https://github.com/example/ts-kit"
-        }
-    ],
-    "JavaScript (Vanilla)": [
-        {
-            "title": "Micro Interactions",
-            "subtitle": "Animation lab",
+            "title": "Micro‑Interactions Lab",
+            "subtitle": "Vanilla JS animations & UX patterns",
             "demo": "https://example.com/js-micro",
             "code": "https://github.com/example/js-micro"
         }
     ],
-    "HTML / CSS": [
+    "Node.js": [
         {
-            "title": "Fluid Layouts",
-            "subtitle": "Modern responsive patterns",
-            "demo": "https://example.com/css-fluid",
-            "code": "https://github.com/example/css-fluid"
+            "title": "API Boilerplate",
+            "subtitle": "Express + Prisma + Auth",
+            "demo": "https://example.com/node-api",
+            "code": "https://github.com/example/node-api"
+        }
+    ],
+    "GSAP": [
+        {
+            "title": "Motion Sequences",
+            "subtitle": "Scroll & timeline choreography",
+            "demo": "https://example.com/gsap-sequences",
+            "code": "https://github.com/example/gsap-sequences"
+        }
+    ],
+    "Spline": [
+        {
+            "title": "3D Hero Scenes",
+            "subtitle": "Interactive Spline embeds",
+            "demo": "https://example.com/spline-heroes",
+            "code": "https://github.com/example/spline-heroes"
+        }
+    ],
+    "Sentry": [
+        {
+            "title": "Observability Setup",
+            "subtitle": "Error + performance monitoring",
+            "demo": "https://example.com/sentry-setup",
+            "code": "https://github.com/example/sentry-setup"
+        }
+    ],
+    "Google Analytics": [
+        {
+            "title": "Analytics Starter",
+            "subtitle": "gtag v4 + route tracking",
+            "demo": "https://example.com/ga-starter",
+            "code": "https://github.com/example/ga-starter"
         }
     ],
 }
@@ -122,8 +149,8 @@ REVIEWS = [
 ]
 
 CONTACTS = [
-    {"label": "Dev Community", "url": "https://dev.to/"},
-    {"label": "Tech Creator Profile", "url": "https://www.youtube.com/"},
+    {"label": "GitHub", "url": "https://github.com/"},
+    {"label": "LinkedIn", "url": "https://www.linkedin.com/"},
     {"label": "Email Me", "url": "mailto:hello@example.com"},
 ]
 
